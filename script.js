@@ -134,12 +134,10 @@ function loadFiles() {
 
 	// Check each playlist item
 	let i = 0;
-	let k = 0;
 	uPlaylist.forEach(item => {
 		// If the item is a string and doesn't have a "!"
 		if (typeof(item) == "string" && item.search("!") == -1) {
-			// Save the reel name in the first column of the array
-			reels[0][i] = item;
+			// Count for each playlist file that is going to be requested
 			i++;
 
 			// Get the reel file and store its contents in the second column
@@ -147,16 +145,16 @@ function loadFiles() {
 				.then(
 					response => response.text()
 						.then(function(contents) {
-							reels[1][k] = contents;
-							k++;
-							// When all files have been loaded, wait a couple of
-							// seconds then enable the play button
-							if (k > 0 && k == i) {
-								setTimeout(function() {
-									document.getElementById(
-										"play-stop"
-									).innerHTML = "Play"
-								}, 2 * 1000);
+							reels[0].push(item);
+							reels[1].push(contents);
+
+							// Test if this is the last response based on if
+							// the array length is equal to the amount of called
+							// playlist files. If it is, enable the play button
+							if (reels[0].length == i) {
+								document.getElementById(
+									"play-stop"
+								).innerHTML = "Play"
 							}
 						})
 				);
