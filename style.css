@@ -1,0 +1,126 @@
+body {
+	display: flex;
+	height: 100vh;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+
+	background-color: #ffffff;
+	color: #000000de;
+
+	font-family: monospace;
+	font-size: 2em;
+}
+
+button {
+	padding: 0.25em 1em;
+	border-color: #00000061;
+	border-style: solid;
+	border-width: 1px;
+	margin: 1em;
+
+	background-color: #ffffff;
+	color: #000000de;
+
+	font-family: monospace;
+}
+
+pre {
+	border-color: #00000061;
+	border-style: solid;
+	border-width: 1px;
+}
+
+a,
+a:visited {
+	margin: 1em;
+
+	color: #000000de;
+}
+
+a:hover,
+button:hover {
+	border-color: #00000061;
+
+	color: #00000099;
+
+	cursor: pointer;
+}
+
+div {
+	margin-bottom: 1em;
+}
+
+
+/* ------------------------ Show extra items on hover ----------------------- */
+
+.more-container > a {
+	display: none;
+}
+
+.more-container > a:first-child {
+	display: inline-block;
+}
+
+.more-container:hover > a:first-child {
+	display: none;
+}
+
+.more-container:hover > a {
+	display: inline-block;
+}
+
+
+/* ----------------- Set by inverting function in JavaScript ---------------- */
+
+.invert,
+.invert pre,
+.invert a,
+.invert a:visited {
+	border-color: #ffffff61;
+
+	background-color: #242424;
+	color: #ffffffde;
+}
+
+.invert a:hover,
+.invert button:hover {
+	border-color: #ffffff61;
+
+	color: #ffffff99;
+}
+
+
+/* ------------------- Fade controls when video is playing ------------------ */
+
+.dim {
+	opacity: 0.4;
+}
+
+
+/* ---------------------------- Responsive sizing --------------------------- */
+
+@media only screen and (max-width: 1600px) {
+	body { font-size: 1.75em; }
+}
+
+@media only screen and (max-width: 1400px) {
+	body { font-size: 1.5em; }
+}
+
+@media only screen and (max-width: 1200px) {
+	body { font-size: 1.25em; }
+}
+
+@media only screen and (max-width: 1000px) {
+	body { font-size: 1em; }
+}
+
+@media only screen and (max-width: 800px) {
+	body { font-size: 0.75em; }
+}
+
+@media only screen and (max-width: 600px) {
+	body { font-size: 0.5em; }
+}
