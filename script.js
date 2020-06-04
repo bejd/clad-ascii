@@ -242,7 +242,7 @@ function getReady(text) {
 	frames = [];
 
 	// Break the text up into an array of each line
-	const lines = text.split("\r\n");
+	const lines = text.split("\n");
 
 	let frameNumber = 0;
 
