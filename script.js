@@ -1,9 +1,9 @@
 const AUDIO = new Audio("song.mp3");
-const FPS = 15;									// Can be 60, 30, 15...
 
 
 let animation;									// Store this timer
 let ascii;										// Draw the animation here
+let fps = 12;									// Animation playback speed
 let frameCount = 0;								// Counter for playing frames
 let frames = [];								// Frames ready to play
 let initialText = "";							// Store the default text
@@ -22,7 +22,6 @@ let sliceFinish = "all";						// Set by fxSliceReel
 let sliceStart = 0;								// Set by fxSliceReel
 
 
-// The order in which the animations will be played
 const PLAYLIST = [
 	"g2","!s", 1  , 10 ,"d4","g4","d1","!s",	// Guitar & drums
 	 1  , 5  ,"x1",
@@ -109,6 +108,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 	// Set starting volume
 	AUDIO.volume = 0.5;
+
+	// Set FPS higher if using Firefox as it seems to have a lag. Firefox
+	// browser check from https://stackoverflow.com/a/9851769/13154609
+	if (typeof InstallTrigger !== 'undefined') {
+		fps = 15;
+	}
 
 	const volumeDown = document.getElementById("vol-down");
 	volumeDown.addEventListener("click", changeVolume);
@@ -331,7 +336,7 @@ function drawFrames() {
 	// Wrap request animation frame in set timeout to throttle the FPS
 	timeout = setTimeout(function() {
 		animation = requestAnimationFrame(drawFrames);
-	}, 1000 / FPS);
+	}, 1000 / fps);
 }
 
 
