@@ -4,6 +4,8 @@ Music videos are an essential part of any band's promotional materials. Charlott
 
 After a fair amount of searching it seems that there is very little in the way of ASCII art animation software. So I decided to keep things simple and write an ASCII art animator in JavaScript.
 
+The music video can be viewed being animated in real time at https://clad.band. Alternatively, a recording of the animation is on [YouTube](https://www.youtube.com/watch?v=QvZjGgw8ml0).
+
 ## Terminology
 
 I've borrowed from film terminology in the naming of many elements in this project. The text files that contain each separate ASCII animation are referred to as "reels", and when these are processed they are split into "frames".
