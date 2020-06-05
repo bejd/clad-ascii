@@ -22,6 +22,7 @@ let sliceFinish = "all";						// Set by fxSliceReel
 let sliceStart = 0;								// Set by fxSliceReel
 
 
+// The order in which the animations will be played
 const PLAYLIST = [
 	"g2","!s", 1  , 10 ,"d4","g4","d1","!s",	// Guitar & drums
 	 1  , 5  ,"x1",
